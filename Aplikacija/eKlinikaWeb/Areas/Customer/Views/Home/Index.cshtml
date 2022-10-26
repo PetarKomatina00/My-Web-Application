@@ -1,0 +1,130 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="osnovna-strana">
+    
+
+
+<section aria-label="Klinika">
+<div class="carousel" data-carousel>
+    <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
+    <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
+    <ul data-slides>
+        <li class="slide" data-active>
+            <div class="carousel-caption">
+                    <h1 class="display-3">Dobrodošli u eKliniku</h1>
+                    <h3>Najnapredniju kliniku na našim prostorima</h3>
+            </div>
+            <img src="~/slike/klinika.png" alt="Pocetna">
+        </li>
+        <li class="slide">
+            <img src="~/slike/klinika1.png" alt="Pocetna 1">
+        </li>
+        <li class="slide">
+            <img src="~/slike/klinika2.png" alt="Pocetna 2">
+        </li>
+    </ul>
+</div>
+</section>
+
+    <div class="container-fluid">
+        <div class="row-jumbotron">
+            <hr class="my-4" />
+            <div class="jumbotron-stvari">
+                <p class="lead">
+                    Naša klinika opremljena je najnovijom tehnologijom iz sveta medicine, kojom rukuju stručni lekari priznati na svetskom nivou.
+                </p>
+            </div>
+                <div id="gif">
+                    <div class="container-fluid gifce">
+                        <div class="row text-center">
+                            <div class="col-sm-12">
+                                <img class="gif" src="~/slike/medicina.gif" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <hr class="my-4" />
+        </div>        
+    </div>
+    <hr class="my-4" />
+</div>
+
+<div class="container-fluid padding">
+    <div class="row welcome text-center">
+        <div class="col-12">
+            <h1 class="display-4">Upoznajte naš tim</h1>
+            <hr />
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid padding doktori-kartice">
+    <div class="row padding kolona-doktori">
+        <div class="col-md-3 col-sm-6 col-xs-12 col-lg-3">
+            <div class="cards">
+                <img class="card-img-top" src="~/slike/doktor.png" />
+                <div class="card-body kartica">
+                    <h4 class="card-title">Filip Vukašinović</h4>
+                    <p class="card-text">Specijalista kognitivne psihologije.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="cards">
+                <img class="card-img-top" src="~/slike/doktor1.png" />
+                <div class="card-body kartica">
+                    <h4 class="card-title">Luka Joksimović</h4>
+                    <p class="card-text">Doktor opšte prakse.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="cards">
+                <img class="card-img-top" src="~/slike/doktor2.png" />
+                <div class="card-body kartica">
+                    <h4 class="card-title">Filip Drobnjak</h4>
+                    <p class="card-text">Doktor estetske hirurgije.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="cards">
+                <img class="card-img-top" src="~/slike/doktor3.png" />
+                <div class="card-body kartica">
+                    <h4 class="card-title">Jovan Pantović</h4>
+                    <p class="card-text">Specijalista stomatologije.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid dugmence">
+    <div class="row col-4 ">
+    <a asp-area = "Customer" asp-controller = "Doktori" asp-action = "Index"><button type="button" class="btn btn-lg dugme-lekari" >Svi Lekari</button></a>
+    </div>
+</div>
+
+<hr class="my-4" />
+
+<div class="container-fluid padding">
+    <div class="row text-center padding">
+        <div class="col-12">
+            <h2>Kontakt</h2>
+        </div>
+        <div class="col-12 social padding">
+            <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/js/Skripta.js"></script>
+}
+
+

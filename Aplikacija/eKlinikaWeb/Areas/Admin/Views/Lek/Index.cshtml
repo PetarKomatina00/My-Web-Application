@@ -1,0 +1,31 @@
+﻿<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Lista Lekova</h2>
+		</div>
+        <div class="col-6 text-end">
+            <a asp-controller="Lek" asp-action="Upsert" class="btn btn-primary">
+               <i class="bi bi-plus-circle"></i> &nbsp; Napravi novi lek
+			</a>
+		</div>
+	</div>
+    <br /><br />
+<table  id="tblData" class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>Ime</th>
+            <th>Deskripcija</th>
+            <th>ISBN</th>
+            <th>Proizvođač</th>
+            <th>Cena</th>
+            <th>Cena3+</th>
+            <th>Pakovanje</th>
+            <th></th>
+		</tr>
+	</thead>
+</table>
+</div>
+
+@section Scripts{
+    <script src="~/js/lek.js"></script>
+}

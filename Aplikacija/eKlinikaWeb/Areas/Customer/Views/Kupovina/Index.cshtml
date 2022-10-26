@@ -1,0 +1,33 @@
+﻿@model IEnumerable<eKlinika.Models.Lek>
+
+<div class = "row pb-3 lekovi-svi">
+    @foreach(var lek in Model)
+    {
+        <div class = "col-lg-3 col-md-4 col-sm-6 col-sm-12">
+            <div class = "row p-2 ">
+                <div class = "col-12 p-1" style = "border:1px solid #008cba; border-radius:5px; min-width:270px; text-align:center;">
+                    <img src = "@lek.ImageUrl" class = "card-img-top rounded" style="width=100%; height=100%;">
+                    
+                    <div class = "card-body">
+                        <div class = "pl-1">
+                            <p class ="card-title h3 text-primary">@lek.Ime</p>
+                            <p class ="card-title h5 text-secondary">@lek.Proizvodjac</p>
+                        </div>
+                        <div class = "pl-1">
+                            <p>Cena: <b>@lek.Cena.ToString("0.00")</b></p>
+                        </div>
+                        <div class = "pl-1">
+                            <p>Cena za 3+ pakovanja: @lek.Cena3.ToString("0.00")</p>
+                        </div>
+                    </div>
+                        <div>
+                        <a asp-action = "Detalji" class = "btn btn-primary form-control" asp-route-lekID = "@lek.LekID">
+                            Detalji
+                        </a>
+                        </div>
+                </div>
+                
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,15 @@
+﻿<form method="post" asp-action="ObrisiSve">
+	<div class="border p-3 mt-4 brisanje">
+		<h2 class = "text-danger">PAŽNJA AKO NASTAVITE OBRISAĆETE SVE TERMINE</h2>
+		<button class = "btn btn-danger">Obriši sve</button>
+		<a class = "btn btn-secondary"asp-area = "Admin" asp-controller = "Vreme" asp-action = "Index">
+			Vrati se nazad
+		</a>
+	</div>
+</form>
+
+@section Scripts{
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}

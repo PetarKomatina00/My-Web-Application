@@ -1,0 +1,93 @@
+﻿@model eKlinika.Models.ViewModels.PregledVM
+
+<form method="post" asp-action="Zakazi">
+    <div class="row zakazi-pregled">
+        <div class="col-md-6 tabela-zakazi">
+            <div class="row pb-2">
+                <h2 class="text-primary">Zakaži pregled</h2>
+                <hr />
+            </div>
+            <div class="col-md-6 py-2">
+                <select asp-for="@Model.Pregled.OdeljenjeID" asp-items="@Model.listaOdeljenja" class="form-select">
+                    <option disabled selected>--Izaberi Odeljenje--</option>
+                </select>
+            </div>
+            <div class="col-md-6 py-2">
+                <label asp-for="@Model.Pregled.Ime"></label>
+                <input readonly asp-for="@Model.Pregled.Ime" class="form-control" />
+                <span asp-validation-for="@Model.Pregled.Ime" class="text-danger"></span>
+            </div>
+            <div class="col-md-6 py-2">
+                <label asp-for="@Model.Pregled.Telefon"></label>
+                <input asp-for="@Model.Pregled.Telefon" class="form-control" />
+                <span asp-validation-for="@Model.Pregled.Telefon" class="text-danger"></span>
+            </div>
+            <div class = "col-md-6 py-2">
+                <label asp-for="@Model.Pregled.Datum">Datum</label> 
+                <input asp-for="@Model.Pregled.Datum" class = "form-control" id="from" /> 
+                <span asp-validation-for="@Model.Pregled.Datum" class="text-danger"></span>
+            </div>
+            <div class="col-md-6 py-2">
+                <select asp-for = "@Model.Pregled.VremeID" asp-items = "@Model.listaVremena" class="form-select">
+                    <option disabled selected>--Izaberi Vreme--</option>
+                </select>
+            </div>
+            @*<div class="col-md-6 py-2">
+                <select asp-for = "@Model.Pregled.VremeID" asp-items = "@Model.listaVremena" class="form-select">
+                    <option disabled selected>--Izaberi Vreme--</option>
+                </select>
+            </div>*@
+            <button type="submit" class="btn btn-primary dugme" style="width:150px">Zakaži</button>
+            <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css" type="text/css" media="all">
+        </div>
+        <div class="col-md-6 py-5">
+                <div id="map" style="height:400px; width:400px">
+                </div>
+
+                </div
+            </div>
+</form>
+
+@section Scripts{
+	@{
+    <partial name="_ValidationScriptsPartial" />
+	}
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+    $(function () {
+        //$("#from").datepicker();
+        //$("#from").SelectedDate = DateTime.Now;
+        $("#from").resize
+        var dateToday = new Date();
+var dates = $("#from, #to").datepicker({
+    defaultDate: "+1w",
+    changeMonth: true,
+    numberOfMonths: 3,
+    minDate: dateToday,
+    onSelect: function(selectedDate) {
+        var option = this.id == "from" ? "minDate" : "maxDate",
+            instance = $(this).data("datepicker"),
+            date = $.datepicker.parseDate(instance.settings.dateFormat || $.datepicker._defaults.dateFormat, selectedDate, instance.settings);
+        dates.not(this).datepicker("option", option, date);
+    }
+});
+    });
+</script>
+
+<script>
+    let map;
+
+    function initMap() {
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 43.33119820627463, lng: 21.89248086231118},
+        zoom: 18,
+      });
+    }
+    window.initMap = initMap;
+    //43.33119820627463, 21.89248086231118
+</script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABJFchj8TZtwKOLIAQ3XnP361oQ0PC5r4&callback=initMap"></script>
+
+}

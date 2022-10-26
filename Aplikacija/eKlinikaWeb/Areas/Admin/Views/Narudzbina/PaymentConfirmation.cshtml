@@ -1,0 +1,15 @@
+﻿@model int
+<div class="container row">
+    <div class="col-12 text-center">
+        <h1 class="text-primary text-center">Uspesno ste platili</h1>
+        Broj isporuke je: @Model <br /><br />
+        <img src="~/slike/dr.png" width="65%" />
+    </div>
+    <div class="col-12 text-center" style="color:maroon">
+        <br />
+            Uspesno ste platili
+        <br />
+        <a asp-area = "Admin" asp-controller = "Narudzbina" asp-action = "Detalji" asp-route-narudzbinaID = "Model" class = "btn btn-primary">Vrati se nazad</a>
+    </div>
+</div> 
+

@@ -1,0 +1,86 @@
+﻿@model IEnumerable<Doctor>
+@{
+    ViewData["Title"] = "Index";
+}
+<div class = "container p-3">
+    <div class = "row pt-4">
+        <div class = "col-6">
+            <h2 class = "text-primary">
+                Lista Doktora
+            </h2>
+        </div>
+        <div class = "text-end pb-3">
+            <a asp-controller = "Doctor" asp-action = "Create" class = "btn btn-primary">
+                <i class = "bi bi-plus=circle"> </i>
+                Napravi novog doktora
+            </a>
+        </div>
+    </div>
+
+    <table class = "table table-bordered table-striped" style = "width:100%">
+        <thead>
+            <tr>
+                <th>
+                    Ime
+                </th>
+                <th>
+                    Prezime
+                </th>
+                <th>
+                    Srednje Ime
+                </th>
+                <th>
+                    Profesija
+                </th>
+                <th>
+                    Godine Iskustva
+                </th>
+                <th>
+                    Ocena
+                </th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var x in Model)
+            {
+                <tr>
+                    <td width = "50%">
+                        @x.Ime
+                    </td>
+                    <td width = "50%">
+                        @x.Prezime
+                    </td>
+                    <td width = "50%">
+                        @x.SrednjeIme
+                    </td>
+                    <td width = "50%">
+                        @x.Profesija
+                    </td>
+                    <td width = "50%">
+                        @x.GodineIskustva
+                    </td>
+                    <td width = "50%">
+                        @x.Ocena
+                    </td>
+                    <td>
+                        <div class = "w-75 btn-group" role = "group">
+                            <!--aso-route-(ime promenljive u funkciji parametra)-->
+                            <a asp-controller = "Doctor" asp-action = "Edit" asp-route-id = "@x.DoctorID" class = "btn btn-primary text-center">
+                                <i class="bi bi-pencil-square">Edit</i>
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div class = "w-75 btn-group" role = "group">
+                            <a asp-controller = "Doctor" asp-action = "Delete" asp-route-id = "@x.DoctorID" class = "btn btn-danger">
+                                <i class="bi bi-trash">Delete</i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

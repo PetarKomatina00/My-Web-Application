@@ -1,0 +1,30 @@
+﻿@model Grad
+
+<form method="post" asp-action="Edit">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Edit Category</h2>
+			<hr />
+		</div>
+		@*<div asp-validation-summary="All"></div>*@
+		<div class="mb-3">
+			<label asp-for="NazivGrada">Naziv grada</label>
+			<input asp-for="NazivGrada" class="form-control" />
+			<span asp-validation-for="NazivGrada" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="PostanskiBroj">Poštanski Broj</label>
+			<input asp-for="PostanskiBroj" class="form-control" />
+			<span asp-validation-for="PostanskiBroj" class="text-danger"></span>
+		</div>
+		<button type="submit" class="btn btn-primary" style="width:150px">Ažuriraj</button>
+		<a asp-controller="Grad" asp-action="Index" class="btn btn-secondary" style="width:150px">
+			Nazad na listu
+		</a>
+	</div>
+</form>
+@section Scripts{
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}

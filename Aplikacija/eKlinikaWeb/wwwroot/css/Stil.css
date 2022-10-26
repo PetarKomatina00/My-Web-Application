@@ -1,0 +1,525 @@
+﻿
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+
+body {
+    padding-bottom: 320px;
+    min-width: fit-content;
+}
+
+.lekovi-svi {
+    margin-left: 0.1rem;
+}
+
+.carousel-caption {
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+    .carousel-caption h1 {
+        font-size: 500%;
+        text-transform: inherit;
+        text-shadow: 1px 1px 10px #000;
+        color: #EDE9E8;
+    }
+
+    .carousel-caption h3 {
+        font-size: 200%;
+        color: #EDE9E8;
+        text-transform: inherit;
+        text-shadow: 1px 1px 10px #000;
+    }
+
+
+
+.container-fluid {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+}
+
+.navbar, footer {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.navbar {
+    background-color: #9db3d1;
+}
+
+.osnovna-strana {
+    width: 100%;
+}
+
+.pb-3 {
+    width: 100%;
+}
+
+.row-jumbotron {
+    background-color: #72c3c9;
+    border: 1px thin black;
+    justify-content: center;
+}
+
+.lead {
+    text-align: center;
+    padding: 10px;
+    color: black;
+}
+
+.jumbotron-stvari {
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 35px;
+}
+
+
+
+
+
+
+
+.social a {
+    font-size: 4.5em;
+    padding: 3rem;
+}
+
+.fa-facebook {
+    color: #3b5998;
+}
+
+.fa-twitter {
+    color: #00aced;
+}
+
+.fa-instagram {
+    color: #517fa8;
+}
+
+.fa-youtube {
+    color: #bb0000;
+}
+
+    .fa-youtube:hover, .fa-instagram:hover, .fa-twitter:hover, .fa-facebook:hover {
+        color: #b5d5d5;
+    }
+
+.text-center h2 {
+    font-family: 'Poppins', sansa-serif;
+}
+
+footer {
+    background-color: #2f4d73;
+    color: #d5d5d5;
+    padding-top: 2rem;
+}
+
+.naziv-sajta {
+    color: #000000;
+}
+
+
+hr.light {
+    border-top: 1px solid #d5d5d5;
+    width: 100%;
+    margin-top: .8rem;
+    margin-bottom: 1rem;
+}
+
+footer h5 {
+    color: #d5d5d5;
+}
+
+.btn-md {
+    background-color: #9db3d1;
+    margin-bottom: 1rem;
+}
+
+    .btn-md:hover {
+        background-color: #54a2ef;
+    }
+
+.btn-primary {
+    background-color: #9db3d1;
+}
+
+    .btn-primary:hover {
+        background-color: #54a2ef;
+    }
+
+
+.checkbox {
+    margin-top: .5rem;
+}
+
+.registracija {
+    justify-content: center;
+}
+
+    .registracija h2 {
+        text-align: center;
+    }
+
+.logovanje {
+    justify-content: center;
+}
+
+    .logovanje h2 {
+        text-align: center;
+    }
+
+    .logovanje p {
+        text-align: center;
+    }
+
+
+.zaboravljen-password {
+    display: flex;
+    justify-content: center;
+}
+
+    .zaboravljen-password h2 {
+        text-align: center;
+    }
+
+    .zaboravljen-password button {
+        margin-top: 1rem;
+    }
+
+.potvrda-sifre {
+    text-align: center;
+}
+
+.ponovno-slanje {
+    text-align: center;
+    justify-content: center;
+}
+
+    .ponovno-slanje button {
+        margin-top: 1rem;
+    }
+
+.cela-strana {
+    width: 100%;
+}
+
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+}
+
+
+
+
+.doktori-kartice {
+    margin-top: 35px;
+}
+
+.cards {
+    position: relative;
+    overflow: hidden;
+}
+
+    .cards:before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 220%;
+        background: rgba(63, 136, 191,0.7);
+        top: -50%;
+        left: -100%;
+        z-index: 1;
+        transform: rotate(15deg);
+        transform-origin: center top 0;
+        transition: .4s;
+    }
+
+    .cards:hover:before {
+        left: 10%;
+    }
+
+    .cards img {
+        width: 100%;
+        height: auto;
+    }
+
+.kartica {
+    width: 100%;
+    padding: 0 20px;
+    position: absolute;
+    top: -100%;
+    color: #fff;
+    left: 0;
+    z-index: 2;
+    transition: 1.1s;
+}
+
+.cards:hover .kartica {
+    top: 80px;
+}
+
+.kartica h4, .kartica p {
+    text-shadow: 2px 2px #38393d;
+}
+
+
+.zakazi-pregled {
+    align-content: center;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.tabela-zakazi {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+    .tabela-zakazi dugme {
+        margin-top: 2rem;
+    }
+
+.lekovi-svi {
+    justify-content: space-evenly;
+}
+
+.profil-podaci {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.podaci-profil {
+    margin: 2rem;
+}
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.carousel {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+    .carousel > ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: 200ms opacity ease-in-out;
+    transition-delay: 200ms;
+}
+
+    .slide > img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .slide[data-active] {
+        opacity: 1;
+        z-index: 1;
+        transition-delay: 0ms;
+    }
+
+.carousel-button {
+    position: absolute;
+    z-index: 2;
+    background: none;
+    border: none;
+    font-size: 4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255,255,255,.5);
+    cursor: pointer;
+    border-radius: .25rem;
+    padding: 0 .5rem;
+    background-color: rgba(0,0,0,.1);
+}
+
+    .carousel-button:hover,
+    .carousel-button:focus {
+        color: white;
+        background-color: rgba(0,0,0,.2);
+    }
+
+    .carousel-button:focus {
+        outline: 1px solid black;
+    }
+
+    .carousel-button.prev {
+        left: 1rem;
+    }
+
+    .carousel-button.next {
+        right: 2rem;
+    }
+
+.dugmence {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.dugme-lekari {
+    align-items: center;
+    background-color: #9db3d1;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 20px;
+    max-width: 480px;
+    min-height: 40px;
+    min-width: 0px;
+    overflow: hidden;
+    padding: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+}
+
+    .dugme-lekari :hover,
+    .dugme-lekari :focus {
+        background-color: #54a2ef;
+        color: #000000;
+    }
+
+    .dugme-lekari :active {
+        background: #54a2ef;
+        color: rgb(255, 255, 255, .7);
+    }
+
+    .dugme-lekari :disabled {
+        cursor: not-allowed;
+        background: rgba(0, 0, 0, .08);
+        color: rgba(0, 0, 0, .3);
+    }
+
+
+
+.registrovanje {
+    justify-content: center;
+    align-content: center;
+    text-align:center;
+}
+
+@media only screen and (max-width:768px) {
+    body {
+        padding-bottom: 460px;
+        min-width: fit-content;
+    }
+
+    .carousel-caption h1 {
+        font-size: 550%;
+        text-transform: inherit;
+        text-shadow: 1px 1px 10px #000;
+        color: #EDE9E8;
+    }
+
+    .carousel-caption h3 {
+        font-size: 270%;
+        color: #EDE9E8;
+        text-transform: inherit;
+        text-shadow: 1px 1px 10px #000;
+    }
+
+    .cards:before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 220%;
+        background: rgba(63, 136, 191,0.7);
+        top: -50%;
+        left: -100%;
+        z-index: 1;
+        transform: rotate(10deg);
+        transform-origin: center top 0;
+        transition: .4s;
+    }
+}
+
+@media only screen and (max-width:480px) {
+    body {
+        padding-bottom: 460px;
+        min-width: fit-content;
+    }
+
+    .carousel-caption h1 {
+        font-size: 450%;
+        text-transform: inherit;
+        text-shadow: 1px 1px 10px #000;
+        color: #EDE9E8;
+    }
+
+    .carousel-caption h3 {
+        font-size: 275%;
+        color: #EDE9E8;
+        text-transform: inherit;
+        text-shadow: 1px 1px 10px #000;
+    }
+
+    .cards:before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 220%;
+        background: rgba(63, 136, 191,0.7);
+        top: -50%;
+        left: -100%;
+        z-index: 1;
+        transform: rotate(10deg);
+        transform-origin: center top 0;
+        transition: .4s;
+    }
+}
+
+
+.lekovi-header {
+    background-color: #9db3d1;
+}
+
+.brisanje {
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+
+.doktori-svi{
+    justify-content:space-evenly;
+    margin-left:0.08rem;
+}

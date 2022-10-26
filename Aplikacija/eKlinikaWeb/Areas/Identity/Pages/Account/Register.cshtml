@@ -1,0 +1,151 @@
+﻿@page
+@using eKlinika.Utility
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+@if (User.IsInRole(SD.Admin) || User.IsInRole(SD.Direktor))
+{
+    <h2 class="text-primary" style="text-align:center;">Registrovanje korisnika od strane @(User.IsInRole(SD.Admin) ? "Admina": "Direktora")</h2>
+}
+else
+{
+    <h1 style="text-align:center;">Registrovanje Korisnika</h1>
+}
+
+<div class="row pt-4 registrovanje">
+    <div class="col-md-7">
+        <form id="registerForm" class="row" asp-route-returnUrl="@Model.ReturnUrl" method="post" enctype="multipart/form-data">
+            <input asp-for="@Model.Input.ImageUrl" hidden />
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="row">
+                <div class="form-floating py-2 col-6">
+                    <input asp-for="Input.Ime" class="form-control" />
+                    <label asp-for="Input.Ime"></label>
+                    <span asp-validation-for="Input.Ime" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2 col-6">
+                    <input asp-for="Input.Prezime" class="form-control" />
+                    <label asp-for="Input.Prezime"></label>
+                    <span asp-validation-for="Input.Prezime" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2 col-12">
+                    <input id="email" asp-for="Input.Email" class="form-control emailInput" />
+                    <label asp-for="Input.Email"></label>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2 col-6">
+                    <input asp-for="Input.Adresa" class="form-control" />
+                    <label asp-for="Input.Adresa"></label>
+                    <span asp-validation-for="Input.Adresa" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2 col-6">
+                    <select id = "select" asp-for="Input.NazivGrada" asp-items="@Model.Input.ListaGradova" class="form-select">
+                        <option disabled selected>--Izaberi Grad</option>
+                    </select>
+                </div>
+                <div class="form-floating py-2 col-6">
+                    <input id = "select-input" asp-for="Input.PostanskiBroj" class="form-control" autocomplete="username" aria-required="true" />
+                    <label asp-for="Input.PostanskiBroj"></label>
+                    <span asp-validation-for="Input.PostanskiBroj" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2 col-6">
+                    <input asp-for="Input.BrojTelefona" class="form-control" autocomplete="username" aria-required="true" />
+                    <label asp-for="Input.BrojTelefona"></label>
+                    <span asp-validation-for="Input.BrojTelefona" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2 col-6">
+                    <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
+                    <label asp-for="Input.Password"></label>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating col-6">
+                    <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
+                    <label asp-for="Input.ConfirmPassword"></label>
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
+
+
+                @if (User.IsInRole(SD.Admin) || User.IsInRole(SD.Direktor))
+                {
+                    <div class="form-floating py-2 col-6">
+                        <select asp-for="Input.Uloga" asp-items="@Model.Input.ListaUloga" class="form-select">
+                            <option disabled selected>--Izaberi Ulogu</option>
+                        </select>
+                    </div>
+                }
+                <div class="form-floating py-2 col-6">
+                    <input style="display:none" asp-for="Input.Profesija" class="form-control" autocomplete="new-password" aria-required="true" />
+                    <label style="display:none" id="profesija" asp-for="Input.Profesija"></label>
+                    <span asp-validation-for="Input.Profesija" class="text-danger"></span>
+                </div>
+                @*<div class="form-floating py-2 col-6">
+                    <input  style = "display:none"asp-for="Input.DoktorsIDNumID" class="form-control" autocomplete="new-password" aria-required="true" />
+                    <label style = "display:none" id = "idNumLabel" asp-for="Input.DoktorsIDNumID"></label>
+                    <span asp-validation-for="Input.DoktorsIDNumID" class="text-danger"></span>
+                    </div>*@
+                <div class="form-floating py-2">
+                    <label style="display:none" asp-for="@Model.Input.ImageUrl"></label>
+                    <input style="display:none" type="file" id="uploadBox" name="file" class="form-control" />
+                </div>
+            </div>
+            <button onclick="return ValidateInput()" id="registerSubmit" type="submit" class="w-40 btn btn-md btn-primary">Registruj korisnika</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+<partial name="_ValidationScriptsPartial" />
+<script>
+        $(document).ready(function(){
+        $('#Input_Uloga').change(function(){
+            var selection= $('#Input_Uloga Option:Selected').text();
+            if(selection != 'Doktor'){
+                //#Input_DoktorsIDNumID
+                //idNumLabel
+                $('#uploadBox').hide();
+                $('#Input_ImageUrL').hide();
+                $('#Input_Profesija').hide();
+                $('#profesija').hide();
+            }
+            else{
+                $('#uploadBox').show();
+                $('#Input_ImageUrL').show();
+                $('#Input_Profesija').show();
+                $('#profesija').show();
+            }
+        })
+    })
+</script>
+<script>
+     tinymce.init({
+       selector: 'textarea',
+       plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+       toolbar_mode: 'floating',
+    });
+
+     function ValidateInput(){
+         var selection= $('#Input_Uloga Option:Selected').text();
+         if(selection != 'Doktor'){
+             return true;
+         }
+         if(document.getElementById("uploadBox").value==""){
+             Swal.fire({
+               icon: 'error',
+               title: 'Oops...',
+               text: 'Please upload an Image!',
+             });
+             return false;
+         }
+         return true;
+     }
+</script>
+    <script src = "~/js/email-genie.js">
+    </script>
+  <script>
+    let field = new EmailGenie('.emailInput');
+  </script>
+}

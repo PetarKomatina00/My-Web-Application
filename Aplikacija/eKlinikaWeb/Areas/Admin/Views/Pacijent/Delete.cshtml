@@ -1,0 +1,58 @@
+﻿@model Pacijent
+
+<form method = "post" asp-action = "Delete">
+    <input asp-for = "PacijentID" hidden/>
+    <div class = "border p-3 mt-4">
+        <div class = "row pb-3">
+            <div class = "text-primary">
+                <h2 class = "text-primary">
+                    Napravi Pacijenta
+                </h2>
+            </div>
+        </div>
+        <div class = "mb-3">
+            <label asp-for = "Ime"></label>
+            <input asp-for = "Ime" class = "form-control" disabled/>
+        </div>
+        <div class = "mb-3">
+            <label asp-for = "Prezime"></label>
+            <input asp-for = "Prezime" class = "form-control" disabled/>
+        </div>
+        <div class = "mb-3">
+            <label asp-for = "SrednjeIme"></label>
+            <input asp-for = "SrednjeIme" class = "form-control" disabled/>
+        </div>
+        <div class = "mb-3">
+            <label asp-for = "JMBG"></label>
+            <input asp-for = "JMBG" class = "form-control" disabled/>
+        </div>
+        <div class = "mb-3">
+            <label asp-for = "BrojKartice"></label>
+            <input asp-for = "BrojKartice" class = "form-control" disabled/>
+        </div>
+        <div class = "mb-3">
+            <label asp-for = "Godine"></label>
+            <input asp-for = "Godine" class = "form-control" disabled/>
+        </div>
+        <div class = "mb-3">
+            <label asp-for = "Email"></label>
+            <input asp-for = "Email" class = "form-control" disabled/>
+        </div>
+        <button type = "submit" class = "btn btn-danger width:150px">
+            Obrisi
+        </button>
+        <a asp-controller = "Pacijent" asp-action = "Index" class = "btn btn-secondary">
+            Vrati se
+        </a>
+    </div>
+</form>
+<script type = "text/javascript">
+    var togglePassword = document.querySelector("#togglePassword");
+    var password = document.querySelector("#Password");
+    togglePassword.addEventListener('click', function(e){
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        //togglePassword.classList.remove("bi bi-eye-fill");
+        togglePassword.classList.add("bi bi-eye-slash");
+    });
+</script>

@@ -1,0 +1,72 @@
+﻿@model Kupovina
+
+<form method="post">
+    <input hidden asp-for = "LekID"/>
+        <div class="card  container">
+            <div class="card-header  text-light ml-0  row lekovi-header">
+                <div class="col-12 col-md-6">
+                    <h1 class="text-black-50">@Model.Lek.Ime</h1>
+                    <p class="text-black-75">@Model.Lek.Proizvodjac</p>
+                </div>
+                <div class="col-12 col-md-6 text-end pt-4">
+                    <span class="badge bg-info pt-2" style="height:30px;">@Model.Lek.Pakovanje.VrstaPakovanja</span>
+                </div>
+            </div>
+            <div class="card-body row container">
+                <div class="container rounded p-2">
+                    <div class="row">
+                        <div class="col-8 col-lg-8">
+                            <div class="row pl-2">
+                                <h5 class="text-muted">ISBN : @Model.Lek.ISBN</h5>
+                            </div>
+                            <div class="row pl-2">
+                                <h5 class="text-muted pb-2">Cena: @Model.Lek.Cena.ToString("0.00")RSD</h5>
+                            </div>
+                            <div class="row text-center pl-2">
+                                <div class="p-1 col-2 bg-secondary border-bottom">
+                                    <div>@Model.Kolicina</div>
+                                </div>
+                                <div class="p-1 col-2 bg-secondary border-bottom">
+                                    <div>1-3</div>
+                                </div>
+                                <div class="p-1 col-2 bg-secondary border-bottom">
+                                    <div>3+</div>
+                                </div>
+                            </div>
+                            <div class="row text-center pl-2" style="color:maroon; font-weight:bold">
+                                <div class="p-1 col-2 bg-secondary">
+                                    <div>Cena</div>
+                                </div>
+                                <div class="p-1 col-2 bg-secondary">
+                                    <div>@Model.Lek.Cena.ToString("0.00")</div>
+                                </div>
+                                <div class="p-1 col-2 bg-secondary">
+                                    <div>@Model.Lek.Cena3.ToString("0.00")</div>
+                                </div>
+                            </div>
+                            <div class="row pl-2">
+                                <p class="text-secondary">@Html.Raw(@Model.Lek.Description)</p>
+                            </div>
+                            <div class="row pl-2">
+                                <div class="col-3 text-primary"><h4>Kolicina</h4></div>
+                                <div class="col-10"><input asp-for = "Kolicina" class="form-control"  /></div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-3 offset-lg-1 text-center">
+                            <img src="@Model.Lek.ImageUrl" width="100%" class="rounded" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-12 col-md-6 pb-1">
+                        <a class="btn btn-success form-control " style="height:50px;" asp-action = "Index">Nazad na listu</a>
+                    </div>
+                    <div class="col-12 col-md-6 pb-1">
+                        <button type="submit" value="Dodaj u korpu" class="btn btn-primary form-control" style="height:50px;">Dodaj u korpu</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</form>
